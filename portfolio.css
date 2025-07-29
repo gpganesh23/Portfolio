@@ -17,8 +17,8 @@ body {
     min-height: 100vh; /* Ensures body takes at least full viewport height */
     display: flex;
     flex-direction: column; /* Allows footer to stick to bottom */
-    /* ADDED: Helps prevent accidental zoom gestures */
-    touch-action: manipulation;
+    /* CORRECTED: Helps prevent accidental zoom gestures on mobile */
+    touch-action: manipulation; 
 }
 
 /* Main content area styling (not explicitly used in your HTML, but good practice) */
@@ -128,7 +128,7 @@ h3 { font-size: 1.5rem; }
     cursor: pointer;
     padding: 0;
     outline: none;
-    /* UPDATED: Ensure hamburger is on top */
+    /* CORRECTED: Ensure hamburger is on top */
     z-index: 1001; 
 }
 
@@ -161,7 +161,7 @@ h3 { font-size: 1.5rem; }
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
-    /* UPDATED: Positioning for dropdown */
+    /* CORRECTED: Positioning for dropdown as an overlay */
     position: absolute; 
     top: 100%; /* Positions it directly below the navbar */
     left: 0;
@@ -196,9 +196,9 @@ h3 { font-size: 1.5rem; }
     background-color: #1d4ed8;
 }
 
-/* Class toggled by JavaScript to show/hide mobile menu */
+/* CORRECTED: Class toggled by JavaScript to show/hide mobile menu */
 .mobile-nav-links.is-open {
-    display: flex; /* Show the menu */
+    display: flex; /* This is the key to showing the menu! */
 }
 
 
@@ -218,9 +218,6 @@ section:nth-of-type(even) {
     background-color: #f1f5f9; /* Alternate background for readability */
 }
 
-/* --- Hero Section --- (Removed as per request) */
-
-
 /* --- About Section --- */
 .about-section {
     text-align: left; /* Align text left within about section */
@@ -229,7 +226,7 @@ section:nth-of-type(even) {
 
 .about-content {
     display: flex;
-    flex-direction: column; /* Stack on small screens */
+    flex-direction: column; /* Stack on small screens by default */
     align-items: center;
     gap: 40px;
 }
@@ -501,7 +498,7 @@ section:nth-of-type(even) {
 
 .education-entries {
     display: grid;
-    /* UPDATED: Forces single column on smallest screens */
+    /* CORRECTED: Forces single column on smallest screens */
     grid-template-columns: 1fr; 
     gap: 30px; /* Space between cards */
     max-width: 1200px;
@@ -611,7 +608,7 @@ section:nth-of-type(even) {
         display: none; /* Hide hamburger icon */
     }
     .mobile-nav-links {
-        /* UPDATED: Ensure mobile menu is hidden on larger screens, override JS if needed */
+        /* CORRECTED: Ensure mobile menu is hidden on larger screens, override JS if needed */
         display: none !important; 
     }
 
@@ -643,7 +640,7 @@ section:nth-of-type(even) {
         align-items: flex-start; /* Align them to the top */
     }
 
-    /* UPDATED: Education entries for medium screens */
+    /* CORRECTED: Education entries for medium screens */
     .education-entries {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Allow 2+ columns if space permits */
     }
@@ -664,7 +661,7 @@ section:nth-of-type(even) {
         grid-template-columns: repeat(3, 1fr); /* Three columns */
     }
 
-    /* UPDATED: Education entries for large screens */
+    /* CORRECTED: Education entries for large screens */
     .education-entries {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust minmax for larger cards */
     }
