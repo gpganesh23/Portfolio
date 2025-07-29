@@ -1,0 +1,702 @@
+/* General Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Use Inter font, with sans-serif fallback */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8fafc; /* Light background color */
+    min-height: 100vh; /* Ensures body takes at least full viewport height */
+    display: flex;
+    flex-direction: column; /* Allows footer to stick to bottom */
+}
+
+/* Main content area styling (not explicitly used in your HTML, but good practice) */
+main {
+    flex-grow: 1; /* Allows main content to take up available space */
+}
+
+.container {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center content */
+    padding: 0 20px; /* Horizontal padding */
+}
+
+h1, h2, h3 {
+    color: #1e293b; /* Darker headings */
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* --- Navbar Styles --- */
+.navbar {
+    background-color: #ffffff;
+    padding: 1rem 0; /* Vertical padding, no horizontal (handled by container) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    position: sticky; /* Makes navbar stick to the top on scroll */
+    top: 0;
+    z-index: 1000; /* Ensures navbar is always on top */
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+    color: #0f172a;
+}
+
+.logo-highlight {
+    color: #2563eb; /* Blue accent color */
+}
+
+/* Desktop Navigation Links */
+.navbar-links {
+    display: none; /* Hidden by default on small screens */
+    align-items: center;
+}
+
+.nav-link {
+    color: #475569; /* Slate gray */
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 25px; /* Spacing between links */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2563eb; /* Blue on hover */
+}
+
+.nav-link-button {
+    background-color: #2563eb; /* Blue background for button */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link-button:hover {
+    background-color: #1d4ed8; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Mobile Hamburger Menu Icon */
+.mobile-menu-toggle-container {
+    display: block; /* Visible by default on small screens */
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #334155;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animation for hamburger to close icon */
+.hamburger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Navigation Links (Hidden by default, shown by JS) */
+.mobile-nav-links {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    background-color: #f1f5f9; /* Light gray background */
+    padding: 15px 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-nav-link, .mobile-nav-link-button {
+    display: block;
+    padding: 10px 0;
+    color: #475569;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 4px;
+    margin-bottom: 5px; /* Spacing between mobile links */
+}
+
+.mobile-nav-link:hover {
+    background-color: #dbeafe; /* Light blue on hover */
+    color: #1d4ed8;
+}
+
+.mobile-nav-link-button {
+    background-color: #2563eb;
+    color: #ffffff;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav-link-button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Class toggled by JavaScript to show/hide mobile menu */
+.hidden-mobile {
+    display: none;
+}
+
+/* --- Section Styles (General) --- */
+section {
+    padding: 80px 20px; /* Top/bottom padding for sections */
+    max-width: 1200px;
+    margin: 20px auto; /* Margin between sections and center */
+    background-color: #ffffff; /* Default section background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    text-align: center; /* Center content within sections */
+}
+
+/* Re-adding alternate background for sections for visual distinction */
+section:nth-of-type(even) {
+    background-color: #f1f5f9; /* Alternate background for readability */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(to right, #2563eb, #8b5cf6); /* Blue to purple gradient */
+    color: #ffffff;
+    min-height: calc(100vh - 80px); /* Full height minus navbar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 20px auto; /* Keep margin for hero section */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-button {
+    background-color: #ffffff;
+    color: #2563eb;
+    padding: 15px 30px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-button:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-3px);
+}
+
+/* --- About Section --- */
+.about-section {
+    text-align: left; /* Align text left within about section */
+    margin: 20px auto; /* Keep margin for about section */
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column; /* Stack on small screens */
+    align-items: center;
+    gap: 40px;
+}
+
+.about-image img {
+    width: 250px; /* Increased size */
+    height: 250px; /* Increased size */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    border: 5px solid #2563eb;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* --- Skills Section --- */
+.skills-section {
+    margin: 20px auto; /* Keep margin for skills section */
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.skill-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly more prominent shadow */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.skill-card h3 {
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+.skill-card ul {
+    list-style: disc;
+    list-style-position: inside;
+    color: #555;
+}
+
+.skill-card li {
+    margin-bottom: 8px;
+}
+
+/* --- Projects Section --- */
+.projects-section {
+    margin: 20px auto; /* Keep margin for projects section */
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly more prominent shadow */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers area without distortion */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.project-links {
+    margin-top: 15px;
+}
+
+.project-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+    color: #1d4ed8;
+}
+
+/* --- Contact & Resume Side-by-Side Wrapper --- */
+.contact-resume-wrapper {
+    max-width: 1200px;
+    margin: 40px auto; /* Adjust margin between this wrapper and other sections */
+    padding: 0 20px; /* Match container padding */
+    display: flex;
+    flex-direction: column; /* Stack on small screens by default */
+    gap: 40px; /* Space between the two sections when stacked/side-by-side */
+}
+
+/* Individual section styling for side-by-side layout within the wrapper */
+.contact-resume-wrapper .contact-section,
+.contact-resume-wrapper .resume-section {
+    flex: 1; /* Allow sections to grow and shrink */
+    max-width: 100%; /* Ensure they don't exceed wrapper width */
+    margin: 0; /* Remove individual section margins to allow wrapper to control */
+    padding: 40px; /* Increased padding inside these sections for more breathing room */
+}
+
+/* --- Contact Section (Adjusted for Wrapper) --- */
+.contact-section { /* Keep existing styles if desired, but remove conflict with wrapper */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.contact-section h2 {
+    color: #008C8C;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+}
+.contact-section p {
+    margin-bottom: 25px;
+    color: #555;
+}
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+#contact-form label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+}
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+    border-color: #008C8C;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 140, 140, 0.2);
+}
+#contact-form button[type="submit"] {
+    background-color: #ff7043;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+#contact-form button[type="submit"]:hover {
+    background-color: #e6522c;
+    transform: translateY(-2px);
+}
+#form-status {
+    margin-top: 20px;
+    font-weight: 500;
+    color: #008C8C; /* Success message color */
+}
+#form-status.error {
+    color: #dc3545; /* Error message color */
+}
+
+/* --- Resume Section (Adjusted for Wrapper) --- */
+.resume-section {
+    background-color: #ffffff; /* Default background, ensuring it doesn't inherit odd/even styling */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    text-align: center;
+}
+.resume-section .resume-button {
+    background-color: #10b981; /* Green accent */
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Allows padding and margin */
+    margin-top: 20px;
+}
+
+.resume-section .resume-button:hover {
+    background-color: #059669; /* Darker green */
+    transform: translateY(-3px);
+}
+
+.resume-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 15px;
+}
+
+/* --- Education Section Styling (retained from previous) --- */
+.education-section {
+    padding: 80px 20px; /* Adjust padding as needed */
+    background-color: #f0f4f8; /* Light background for distinction */
+    text-align: center;
+    margin: 20px auto; /* Keep margin for education section */
+}
+
+.education-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5em;
+    color: #008C8C; /* Or your primary brand color */
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.education-section h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: #FF7043; /* Accent color */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    border-radius: 2px;
+}
+
+.education-entries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.education-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.education-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.education-card .institution {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.education-card .dates {
+    font-size: 0.95em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.education-card .gpa {
+    font-size: 1em;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.education-card ul {
+    list-style: disc inside;
+    color: #666;
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.education-card ul li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+
+/* --- Footer --- */
+.footer {
+    background-color: #1e293b; /* Dark slate */
+    color: #ffffff;
+    padding: 60px 20px; /* Increased padding for more size (was 50px) */
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.footer p {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #cbd5e1; /* Light gray text */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    color: #94a3b8; /* Lighter gray for links */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+/* --- Responsive Design (Media Queries) --- */
+
+/* Medium screens (e.g., tablets, small laptops) */
+@media (min-width: 768px) {
+    .navbar-links {
+        display: flex; /* Show desktop links */
+    }
+    .mobile-menu-toggle-container {
+        display: none; /* Hide hamburger icon */
+    }
+    .mobile-nav-links {
+        display: none; /* Ensure mobile menu is hidden */
+    }
+
+    /* About Section layout */
+    .about-content {
+        flex-direction: row; /* Layout image and text side-by-side */
+        text-align: left;
+    }
+    .about-image {
+        flex-shrink: 0; /* Prevent image from shrinking */
+    }
+    .about-text {
+        flex-grow: 1; /* Allow text to take remaining space */
+    }
+
+    /* Skills Grid layout */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+
+    /* Projects Grid layout */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+
+    /* Contact & Resume Side-by-Side on medium screens and up */
+    .contact-resume-wrapper {
+        flex-direction: row; /* Arrange children side-by-side */
+        align-items: flex-start; /* Align them to the top */
+    }
+}
+
+/* Large screens (e.g., desktops) */
+@media (min-width: 1024px) {
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.5rem; }
+
+    /* Skills Grid layout */
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
+    }
+
+    /* Projects Grid layout */
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
+    }
+
+    /* Responsive adjustments for smaller screens (Education) */
+    .education-section h2 {
+        font-size: 2.5em; /* Adjusted from 2em to 2.5em to match h2 */
+    }
+    .education-card {
+        padding: 30px; /* Adjusted from 25px to 30px to match larger screens */
+    }
+    .education-card h3 {
+        font-size: 1.8em; /* Adjusted from 1.5em to 1.8em to match h3 */
+    }
+}

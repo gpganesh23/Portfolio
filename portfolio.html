@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G P Ganesh</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#hero" class="navbar-logo">G P Ganesh</a>
+
+            <div class="navbar-links" id="desktop-nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#resume" class="nav-link">Resume</a>
+            </div>
+
+            <div class="mobile-menu-toggle-container">
+                <button id="mobile-menu-button" class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-nav-links hidden-mobile">
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#skills" class="mobile-nav-link">Skills</a>
+            <a href="#projects" class="mobile-nav-link">Projects</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+            <a href="#resume" class="mobile-nav-link">Resume</a>
+        </div>
+    </nav>
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="profile.jpeg" alt="Your Photo">
+            </div>
+            <div class="about-text">
+                <p>
+                Hello! I'm G P Ganesh, a B.Tech in Computer Science and Engineering with a passion for creating intuitive user interfaces and solving complex problems with clean code. I'm a Fresher.
+                </p>
+                <p>
+                My journey in technology began when I first tinkered with an old computer, fascinated by how code could bring ideas to life. I love learning new things and constantly challenging myself to build better, more efficient, and more user-friendly applications.
+                </p>
+                <p>
+                Outside of coding, you can find me cooking for me, playing games, watching animes.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="education" class="education-section">
+        <h2>My Education</h2>
+        <div class="education-entries">
+            <div class="education-card">
+                <h3>B Tech</h3>
+                <p class="institution">KUPPAM ENGNEERING COLLEGE</p>
+                <p class="dates">2021 – 2025</p>
+                <p class="gpa">Percentage: 71</p>
+            </div>
+            <div class="education-card">
+                <h3>Intermediate</h3>
+                <p class="institution">Sai Sri Chaitanya Junior College Palamaneru</p>
+                <p class="dates">2019 – 2021</p>
+                <p class="gpa">Percentage: 93</p>
+            </div>
+            <div class="education-card">
+                <h3>SSC</h3>
+                <p class="institution">Z P High School Cheldiganipalle</p>
+                <p class="dates">2018– 2019</p>
+                 <p class="gpa">Percentage: 90</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Frontend Development</h3>
+                <ul>
+                    <li>HTML5, CSS3</li>
+                    <li>Responsive Design</li>
+                    <li>Modern UI/UX Principles</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Backend Development</h3>
+                <ul>
+                    <li>SpringBoot</li>
+                    <li>RESTful APIs</li>
+                    <li>Database Integration</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Tools & Technologies</h3>
+                <ul>
+                    <li>Git, GitHub</li>
+                    <li>VS Code</li>
+                    <li>Database Management (e.g., SQL)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Library Management System</h3>
+                <p>It is a console based application developed using core java and the collection</p>
+                <div class="project-links">
+                    <a href="https://github.com/gpganesh23/Library-Management" class="project-link">GitHub Repo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Milker</h3>
+                <p>It is a full stack ecommercs website .which is developed to sell the milk products directly from the farm.it is developed using Java,Springboot,Html,Css,JavaScript,MySql </p>
+                <div class="project-links">
+                    <a href="https://milker-app-service.onrender.com/" class="project-link">Live Demo</a>
+                    <a href="https://github.com/gpganesh23/Milker" class="project-link">GitHub Repo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>PortFolio</h3>
+                <p>it is a website which is used to show case all my skills.developed using Html,Css and Javascript </p>
+                <div class="project-links">
+                    <a href="YOUR_PORTFOLIO_LIVE_URL" class="project-link">Live Demo</a>
+                    <a href="YOUR_PORTFOLIO_GITHUB_REPO_URL" class="project-link">GitHub Repo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="contact-resume-wrapper">
+        <section class="contact-section" id="contact">
+            <h2>Contact Me</h2>
+            <p>Have a question or feedback? Send us a message!</p>
+            <form id="contact-form">
+                <label for="user_name">Your Name:</label>
+                <input type="text" id="user_name" name="user_name" required>
+
+                <label for="user_email">Your Email:</label>
+                <input type="email" id="user_email" name="user_email" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="form-status"></p>
+        </section>
+
+        <section id="resume" class="resume-section">
+            <h2>My Resume</h2>
+            <p>Download my full resume to learn more about my experience and qualifications.</p>
+            <a href="portfolio-Ganesh.pdf" download class="resume-button">Download Resume (PDF)</a>
+        </section>
+    </div> <footer class="footer">
+        
+        <div class="social-links">
+            <a href="https://github.com/gpganesh23" class="social-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/g-p-ganesh-75296b262/" class="social-link">LinkedIn</a>
+            </div>
+            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="portfolio.js"></script>
+
+</body>
+</html>
