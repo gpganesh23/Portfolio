@@ -197,7 +197,6 @@ h3 { font-size: 1.5rem; }
 }
 
 /* Class toggled by JavaScript to show/hide mobile menu */
-/* UPDATED: Renamed for clarity and consistency with JS example */
 .mobile-nav-links.is-open {
     display: flex; /* Show the menu */
 }
